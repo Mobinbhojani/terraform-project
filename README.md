@@ -58,6 +58,8 @@ jobs:
     - name: 'Terraform Plan for dev'
       run: terraform plan -var-file=../env/prod/terraform.tfvars
 
+echo "hello"
+
     - name: 'Terraform Apply for dev'
       run: terraform apply --auto-approve -var-file=../env/prod/terraform.tfvars
 
