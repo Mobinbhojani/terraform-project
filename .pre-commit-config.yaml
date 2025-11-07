@@ -7,7 +7,7 @@ ci:
 
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # frozen: v6.0.0
+  rev: v6.0.0
   hooks:
   # Git style
   - id: check-added-large-files
@@ -43,62 +43,21 @@ repos:
 
   # Detect hardcoded secrets
 - repo: https://github.com/gitleaks/gitleaks
-  rev: 39fdb480a06768cc41a84ef86959c07ff33091c4  # frozen: v8.28.0
+  rev: v8.29.0
   hooks:
   - id: gitleaks
 
 # Github Action static analysis tool
 - repo: https://github.com/woodruffw/zizmor-pre-commit
-  rev: 3c10df247c55cf21f75003105b879f145096bd4a  # frozen: v1.14.2
+  rev: v1.16.3
   hooks:
   - id: zizmor
 
-# # Dockerfile
-# - repo: https://github.com/hadolint/hadolint
-#   rev: 4e697ba704fd23b2409b947a319c19c3ee54d24f  # frozen: v2.14.0
-#   hooks:
-#   - id: hadolint
 
-# # YAML
-# - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-#   rev: 8d1b9cadaf854cb25bb0b0f5870e1cc66a083d6b  # frozen: 0.2.3
+# - repo: https://github.com/awslabs/automated-security-helper
+#   rev: v3.1.2
 #   hooks:
-#   - id: yamlfmt
-#     args:
-#     - --mapping=2
-#     - --sequence=2
-#     - --offset=0
-#     - --width=75
-#     - --implicit_start
-
-# - repo: https://github.com/adrienverge/yamllint.git
-#   rev: 79a6b2b1392eaf49cdd32ac4f14be1a809bbd8f7  # frozen: v1.37.1
-#   hooks:
-#   - id: yamllint
-#     types:
-#     - file
-#     - yaml
-#     args:
-#     - --strict
-
-# # JSON5
-# - repo: https://github.com/pre-commit/mirrors-prettier
-#   rev: f12edd9c7be1c20cfa42420fd0e6df71e42b51ea  # frozen: v4.0.0-alpha.8
-#   hooks:
-#   - id: prettier
-#     # https://prettier.io/docs/en/options.html#parser
-#     files: .json5$
-
-# # Bash
-# - repo: https://github.com/jumanjihouse/pre-commit-hooks
-#   rev: 38980559e3a605691d6579f96222c30778e5a69e  # frozen: 3.0.0
-#   hooks:
-#   - id: shfmt
-#     args:
-#     - -l
-#     - -i
-#     - '2'
-#     - -ci
-#     - -sr
-#     - -w
-#   - id: shellcheck
+#     - id: ash-scan
+#       name: Automated Security Helper Scan
+#       entry: ash --source-dir . --output-dir .ash_output --no-fail-on-findings
+#       language: system
