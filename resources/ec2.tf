@@ -7,5 +7,5 @@ module "ec2" {
   subnet_id             = module.vpc.public_subnet_id
   security_group_ids    = [module.vpc.sg_id]
   tags                  = local.common_tags
-
+  environment           = prod
 }
