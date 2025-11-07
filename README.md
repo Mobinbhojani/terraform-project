@@ -10,8 +10,8 @@ on:
     branches:
       - main
   workflow_dispatch:
-  
-  workflow_run: 
+
+  workflow_run:
     workflows: [ Terraform CI/CD for dev ]
     types: completed
 
@@ -47,10 +47,10 @@ jobs:
 
     - name: 'Terraform Format'
       run: terraform fmt
-  
+
     - name: 'Terraform Init for dev'
       run: terraform init -input=false -backend-config=../env/prod/backend.hcl
-    
+
 
     - name: 'Terraform Validate'
       run: terraform validate
@@ -65,3 +65,4 @@ echo "hello"
 
     - name: 'Terraform destroy for dev'
       run: terraform destroy --auto-approve -var-file=../env/prod/terraform.tfvars -->
+# test release
