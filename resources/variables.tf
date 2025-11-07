@@ -34,10 +34,6 @@ variable "vpc-name" {
 
 }
 
-variable "instance-name" {
-
-}
-
 variable "key-name" {
 
 }
